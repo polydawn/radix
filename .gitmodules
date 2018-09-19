@@ -1,0 +1,3 @@
+[submodule ".timeless/catalogs/upstream"]
+	path = .timeless/catalogs/upstream
+	url = https://github.com/polydawn/catalog
