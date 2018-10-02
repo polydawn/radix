@@ -1,28 +1,28 @@
 {
 	"imports": {
-		"root-min": "catalog:early.polydawn.io/monolith/busybash:v1:linux-amd64",
+		"root-busybash": "catalog:early.polydawn.io/monolith/busybash:v1:linux-amd64",
 		"root-debian": "catalog:early.polydawn.io/monolith/debian:v1.2017.01.04:linux-amd64",
 		"root-builder": "catalog:early.polydawn.io/monolith/debian-gcc-plus:v1.2017.01.04:linux-amd64",
 		"src-gzip": "catalog:early.hyphae.polydawn.io/sources/gzip:v1.9:src",
-		"packme": "ingest:pack:tar:./packme"
+		"autoconfesque": "ingest:pack:tar:../../shared/autoconfesque"
 	},
 	"steps": {
 		"build": {
 			"operation": {
 				"inputs": {
 					"root-builder": "/",
-					"src-gzip": "/task/src",
-					"packme": "/task"
+					"src-gzip": "/task/raw",
+					"autoconfesque": "/radix/autoconfesque"
 				},
 				"action": {
 					"userinfo": {"uid":0},
 					"exec": [
 						"/bin/bash", "-c",
-						"cd src/* ; pwd ; ls -lah ; ./configure ; make ; ls -lah"
+						"ln -s raw/* src && ls -lah && /radix/autoconfesque/build.sh"
 					]
 				},
 				"outputs": {
-					"woop": "/task"
+					"woop": "/task/out"
 				}
 			}
 		},
@@ -40,10 +40,10 @@
 				}
 			}
 		},
-		"echo-2-min": {
+		"echo-2-busybash": {
 			"operation": {
 				"inputs": {
-					"root-min": "/",
+					"root-busybash": "/",
 					"build.woop": "/task/bin"
 				},
 				"action": {
@@ -55,5 +55,7 @@
 			}
 		}
 	}
-	"exports": {}
+	"exports": {
+		"bin-amd64-linux": "build.woop"
+	}
 }
