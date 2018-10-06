@@ -1,9 +1,9 @@
 Radix
 =====
 
-> Radix  
-> 1 : the base of a number system or of logarithms  
-> 2 : the primary source  
+> Radix
+> 1 : the base of a number system or of logarithms
+> 2 : the primary source
 
 *(We're going with definition 2, here.)*
 
@@ -23,10 +23,31 @@ The modules are written by humans; the builds are executed by `stellar emerge`;
 and the catalog updates also managed by `stellar` (and sometimes, human
 intervention -- but always must pass `stellar catalog lint`).
 
+
+Running builds
+--------------
+
+- Make sure you have the Timeless Stack tools available:
+  you can get them from https://github.com/polydawn/timeless/releases
+- Run `git submodule update --init` to fetch https://github.com/polydawn/catalog
+  (note: long run this will not be a submodule; right now, it's convenient).
+- Try `stellar emerge early.radix.polydawn.io/hello-world/`
+- Do the same thing for any of the module dirs!
+
+Optional:
+
+- `mkdir .timeless/memo` to enable memoization of formula executions.
+
+
+Naming conventions
+------------------
+
 Modules are currently given names starting with `"early.*"`, to denote that
 this project is in an early phase of its life.  It's likely that all of these
 references will remain valid for a long time to come; but this prefix is sort
 of like a "v0" warning.
+
+### Radix checklist
 
 Some modules have names rooted at `"[early.]radix.polydawn.io"`.
 These are modules that we hope represent good practices, specifically:
