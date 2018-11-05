@@ -18,7 +18,7 @@
 					"policy": "governor",
 					"exec": [
 						"/bin/bash", "-c",
-						"mkdir build out ; cd build ; LDFLAGS=\"-Wl,-rpath=XORIGIN/../lib\" ../src/*/configure ; make ; DESTDIR=/task/out make install ; ls -lah /task/{build,out}"
+						"mkdir build out ; cd build ; LDFLAGS=\"--static\" ../src/*/configure --disable-nls ; make ; DESTDIR=/task/out make install ; ls -lah /task/{build,out}"
 					]
 				},
 				"outputs": {
@@ -36,7 +36,7 @@
 				"action": {
 					"exec": [
 						"/bin/bash", "-c",
-						"cd bin/usr/local/bin/; set -x; ldd readelf; ./readelf -d readelf ; sed 's/XORIGIN/$ORIGIN/' -i readelf ; ./readelf -d readelf ; ln -s /lib/x86_64-linux-gnu/libc.so.6 ../lib/libc.so.6 ; ldd ./readelf ; exit 0"
+						"cd bin/usr/local/bin/; set -x; ldd readelf; ./readelf -d readelf ; exit 0"
 					]
 				}
 			}
@@ -50,7 +50,7 @@
 				"action": {
 					"exec": [
 						"/bin/bash", "-c",
-						"cd bin/usr/local/bin/; set -x; ldd readelf; ./readelf -h ; exit 0"
+						"cd bin/usr/local/bin/; set -x; ldd readelf; ./readelf -d readelf ; exit 0"
 					]
 				}
 			}
