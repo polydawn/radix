@@ -1,6 +1,7 @@
 {
 	"imports": {
-		"root-min": "catalog:early.polydawn.io/monolith/busybash:v1:linux-amd64",
+		"root-min": "catalog:early.polydawn.io/monolith/minld:v1:linux-amd64",
+		"root-busybash": "catalog:early.polydawn.io/monolith/busybash:v1:linux-amd64",
 		"root-debian": "catalog:early.polydawn.io/monolith/debian:v1.2017.01.04:linux-amd64",
 		"root-builder": "catalog:early.polydawn.io/monolith/debian-gcc-plus:v1.2017.01.04:linux-amd64",
 		"packme": "ingest:pack:tar:./packme"
@@ -37,7 +38,21 @@
 				}
 			}
 		},
-		"echo-2-min": {
+		"echo-2-musl": {
+			"operation": {
+				"inputs": {
+					"root-busybash": "/",
+					"build.woop": "/task/bin"
+				},
+				"action": {
+					"exec": [
+						"/bin/bash", "-c",
+						"ls -lah bin; set -x; ldd bin/hello.dyn; ldd bin/hello.static; ldd ./bin/hello.rpath; ./bin/hello.static ; ./bin/hello.dyn ; ./bin/hello.rpath ; exit 0"
+					]
+				}
+			}
+		},
+		"echo-3-minld-static": {
 			"operation": {
 				"inputs": {
 					"root-min": "/",
@@ -45,8 +60,20 @@
 				},
 				"action": {
 					"exec": [
-						"/bin/bash", "-c",
-						"ls -lah bin; set -x; ldd bin/hello.dyn; ldd bin/hello.static; ldd ./bin/hello.rpath; ./bin/hello.static ; ./bin/hello.dyn ; ./bin/hello.rpath ; exit 0"
+						"/task/bin/hello.static"
+					]
+				}
+			}
+		}
+		"echo-4-minld-dyn": {
+			"operation": {
+				"inputs": {
+					"root-min": "/",
+					"build.woop": "/task/bin"
+				},
+				"action": {
+					"exec": [
+						"/task/bin/hello.dyn"
 					]
 				}
 			}
