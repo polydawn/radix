@@ -1,0 +1,2 @@
+from . import hello
+hello()
