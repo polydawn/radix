@@ -4,7 +4,7 @@
 		"root-debian": "catalog:early.polydawn.io/monolith/debian:v1.2017.01.04:linux-amd64",
 		"root-builder": "catalog:early.polydawn.io/monolith/debian-gcc-plus:v1.2017.01.04:linux-amd64",
 		"src-gzip": "catalog:early.hyphae.polydawn.io/sources/gzip:v1.9:src",
-		"autoconfesque": "ingest:pack:tar:../../shared/autoconfesque"
+		"autoconfesque": "ingest:pack:tar:../../../shared/autoconfesque"
 	},
 	"steps": {
 		"build": {
