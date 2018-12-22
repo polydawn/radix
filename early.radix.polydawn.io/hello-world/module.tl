@@ -10,8 +10,8 @@
 		"build": {
 			"operation": {
 				"inputs": {
-					"root-builder": "/",
-					"packme": "/task"
+					"/": "root-builder",
+					"/task": "packme"
 				},
 				"action": {
 					"exec": [
@@ -27,8 +27,8 @@
 		"echo-1-rich": {
 			"operation": {
 				"inputs": {
-					"root-debian": "/",
-					"build.woop": "/task/bin"
+					"/": "root-debian",
+					"/task/bin": "build.woop"
 				},
 				"action": {
 					"exec": [
@@ -41,8 +41,8 @@
 		"echo-2-musl": {
 			"operation": {
 				"inputs": {
-					"root-busybash": "/",
-					"build.woop": "/task/bin"
+					"/": "root-busybash",
+					"/task/bin": "build.woop"
 				},
 				"action": {
 					"exec": [
@@ -55,8 +55,8 @@
 		"echo-3-minld-static": {
 			"operation": {
 				"inputs": {
-					"root-min": "/",
-					"build.woop": "/task/bin"
+					"/": "root-min",
+					"/task/bin": "build.woop"
 				},
 				"action": {
 					"exec": [
@@ -68,8 +68,8 @@
 		"echo-4-minld-dyn": {
 			"operation": {
 				"inputs": {
-					"root-min": "/",
-					"build.woop": "/task/bin"
+					"/": "root-min",
+					"/task/bin": "build.woop"
 				},
 				"action": {
 					"exec": [

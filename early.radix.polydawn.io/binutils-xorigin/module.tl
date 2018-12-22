@@ -10,9 +10,9 @@
 		"build": {
 			"operation": {
 				"inputs": {
-					"root-builder": "/",
-					"src-binutils": "/task/src",
-					"packme": "/task"
+					"/": "root-builder",
+					"/task/src": "src-binutils",
+					"/task": "packme"
 				},
 				"action": {
 					"policy": "governor",
@@ -30,8 +30,8 @@
 		"echo-1-rich": {
 			"operation": {
 				"inputs": {
-					"root-debian": "/",
-					"build.woop": "/task/bin"
+					"/": "root-debian",
+					"/task/bin": "build.woop"
 				},
 				"action": {
 					"exec": [
@@ -44,8 +44,8 @@
 		"echo-2-min": {
 			"operation": {
 				"inputs": {
-					"root-min": "/",
-					"build.woop": "/task/bin"
+					"/": "root-min",
+					"/task/bin": "build.woop"
 				},
 				"action": {
 					"exec": [

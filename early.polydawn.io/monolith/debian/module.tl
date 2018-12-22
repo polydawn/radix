@@ -9,10 +9,10 @@
 		"init": {
 			"operation": {
 				"inputs": {
-					"base": "/",
-					"debootstrap": "/app/debootstrap",
-					"debuerreotype": "/app/debuerreotype",
-					"packme": "/task"
+					"/": "base",
+					"/app/debootstrap": "debootstrap",
+					"/app/debuerreotype": "debuerreotype",
+					"/task": "packme"
 				},
 				"action": {
 					"policy": "sysad",
@@ -36,10 +36,10 @@
 		"install-extra": {
 			"operation": {
 				"inputs": {
-					"base": "/",
-					"init.chroot": "/task/chroot",
-					"debuerreotype": "/app/debuerreotype",
-					"packme": "/task"
+					"/": "base",
+					"/task/chroot": "init.chroot",
+					"/app/debuerreotype": "debuerreotype",
+					"/task": "packme"
 				},
 				"action": {
 					"policy": "sysad",
@@ -59,10 +59,10 @@
 		"strip-nondet": {
 			"operation": {
 				"inputs": {
-					"base": "/",
-					"install-extra.chroot": "/task/chroot",
-					"debuerreotype": "/app/debuerreotype",
-					"packme": "/task"
+					"/": "base",
+					"/task/chroot": "install-extra.chroot",
+					"/app/debuerreotype": "debuerreotype",
+					"/task": "packme"
 				},
 				"action": {
 					"policy": "governor",

@@ -8,9 +8,9 @@
 		"build": {
 			"operation": {
 				"inputs": {
-					"root-debian": "/",
-					"src": "/src",
-					"pypy3": "/pypy3"
+					"/": "root-debian",
+					"/src": "src",
+					"/pypy3": "pypy3"
 				},
 				"action": {
 					"exec": [
@@ -26,9 +26,9 @@
 		"setup-venv": {
 			"operation": {
 				"inputs": {
-					"root-debian": "/",
-					"build.wheels": "/wheels",
-					"pypy3": "/pypy3"
+					"/": "root-debian",
+					"/wheels": "build.wheels",
+					"/pypy3": "pypy3"
 				},
 				"action": {
 					"exec": [
@@ -44,9 +44,9 @@
 		"run": {
 			"operation": {
 				"inputs": {
-					"root-debian": "/",
-					"setup-venv.venv": "/home/reuser/venv",
-					"pypy3": "/pypy3"
+					"/": "root-debian",
+					"/home/reuser/venv": "setup-venv.venv",
+					"/pypy3": "pypy3"
 				},
 				"action": {
 					"exec": [
@@ -59,7 +59,7 @@
 				}
 			}
 		}
-	}
+	},
 	"exports": {
 		"wheels": "build.wheels",
 		"venv": "setup-venv.venv"

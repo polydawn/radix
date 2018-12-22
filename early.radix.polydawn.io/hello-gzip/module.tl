@@ -10,9 +10,9 @@
 		"build": {
 			"operation": {
 				"inputs": {
-					"root-builder": "/",
-					"src-gzip": "/task/raw",
-					"autoconfesque": "/radix/autoconfesque"
+					"/": "root-builder",
+					"/task/raw": "src-gzip",
+					"/radix/autoconfesque": "autoconfesque"
 				},
 				"action": {
 					"userinfo": {"uid":0},
@@ -29,8 +29,8 @@
 		"echo-1-rich": {
 			"operation": {
 				"inputs": {
-					"root-debian": "/",
-					"build.woop": "/task/bin"
+					"/": "root-debian",
+					"/task/bin": "build.woop"
 				},
 				"action": {
 					"exec": [
@@ -43,8 +43,8 @@
 		"echo-2-busybash": {
 			"operation": {
 				"inputs": {
-					"root-busybash": "/",
-					"build.woop": "/task/bin"
+					"/": "root-busybash",
+					"/task/bin": "build.woop"
 				},
 				"action": {
 					"exec": [
