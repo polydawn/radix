@@ -1,3 +1,6 @@
 [submodule "workspace/.timeless/catalog"]
 	path = workspace/.timeless/catalog
 	url = https://github.com/polydawn/catalog
+[submodule "workspace/early.radix.polydawn.io/smsh/src"]
+	path = workspace/early.radix.polydawn.io/smsh/src
+	url = https://github.com/warpfork/smsh
