@@ -77,9 +77,22 @@ quality levels:
 	- the "plus ca-links" part is as yet underspecified, so we basically can't
 	  actually do this until we finish that definition process :)
 
+important strategic note: these quality levels, above, can be thought of as a "2 stars"/"3 stars"/"5 stars" system.
+This means: we can have packages in an ecosystem at all of these quality levels -- and that's fine -- we just tag them as what they are.
+Thus we can do what it takes to get things to work *now*, and also aim for improvements in the future, clearly and without losing our way.
+
+
 source-getting:
 
 - todo need to talk about it.
 - mostly, separate source catalogs, i guess.  i don't know how to avoid these.
 - the git submodule lean is also viable, if... odd.
 - different strokes for different kinds of workflow here, it seems.
+
+
+we don't have a concept of optional dependencies in modules:
+
+- not even close: would defy the point of modules entirely.
+	- they *do not have* parameters; that's the *point*.
+- when developing a templating system for shaking out a distro, still probably won't:
+	- see https://michael.stapelberg.ch/posts/2019-05-23-optional-dependencies/
